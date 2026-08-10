@@ -76,7 +76,7 @@ https://script.google.com/macros/s/AKfycbw0pq-8iRPIThxKibSEuRCV6i4I-xigvVv1ZxFVO
 #### 检查工作表是否存在
 1. 打开 Google Sheet：
    ```
-   https://docs.google.com/spreadsheets/d/1tvKaa07m-lxqyF4ZWgpOsC2ESiXBvNeN5IbA013lEf0/edit
+   https://docs.google.com/spreadsheets/d/1ZSYszk0FRZvcexZyvM71Pl4dRhVEc7hTpPS3KLmoS70/edit
    ```
 2. 查看左下角是否有「評估地點」工作表（不能有空格）
 3. 如果没有，点击「+」新增
@@ -121,7 +121,7 @@ Google Apps Script 正在運行！
 #### 检查 SPREADSHEET_ID
 打开 Google Apps Script，检查第 22 行：
 ```javascript
-const SPREADSHEET_ID = '1tvKaa07m-lxqyF4ZWgpOsC2ESiXBvNeN5IbA013lEf0';
+const SPREADSHEET_ID = '1ZSYszk0FRZvcexZyvM71Pl4dRhVEc7hTpPS3KLmoS70';
 ```
 
 确认这个 ID 和你的 Google Sheet URL 中的 ID 一致：
