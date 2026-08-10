@@ -39,19 +39,19 @@
 
 **推廣人員的專屬連結格式：**
 ```
-https://ifittw01-ai.github.io/AI-auto-sales/?ref=推廣代碼
+https://ifittw01-ai.github.io/LON/?ref=推廣代碼
 ```
 
 **範例：**
-- 李健豪的連結：`https://ifittw01-ai.github.io/AI-auto-sales/?ref=001`
-- Jordan的連結：`https://ifittw01-ai.github.io/AI-auto-sales/?ref=jordantsai777`
+- 李健豪的連結：`https://ifittw01-ai.github.io/LON/?ref=001`
+- Jordan的連結：`https://ifittw01-ai.github.io/LON/?ref=jordantsai777`
 
 ---
 
 ### 步驟 3️⃣：進行首次測試報名
 
 1. **使用推廣連結訪問網站**
-   - 例如：`https://ifittw01-ai.github.io/AI-auto-sales/?ref=001`
+   - 例如：`https://ifittw01-ai.github.io/LON/?ref=001`
 
 2. **點擊「搶先報名」按鈕**
 
@@ -235,7 +235,7 @@ WhatsApp號碼：未提供
 
 2. **推廣連結**
    ```
-   https://ifittw01-ai.github.io/AI-auto-sales/?ref=001
+   https://ifittw01-ai.github.io/LON/?ref=001
    ```
 
 3. **提交測試報名**

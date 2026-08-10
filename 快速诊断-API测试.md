@@ -46,7 +46,7 @@ https://script.google.com/macros/s/AKfycbw0pq-8iRPIThxKibSEuRCV6i4I-xigvVv1ZxFVO
 **解决方法**：
 1. 完全关闭浏览器（所有窗口）
 2. 重新打开浏览器
-3. 访问 http://localhost:8000 或 https://ifittw01-ai.github.io/AI-auto-sales/
+3. 访问 http://localhost:8000 或 https://ifittw01-ai.github.io/LON/
 4. 按 Ctrl + Shift + R 强制刷新
 
 ---

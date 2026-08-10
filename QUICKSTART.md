@@ -23,7 +23,7 @@
 ## 📂 文件結構
 
 ```
-AI-auto-sales/
+LON/
 ├── index.html              # 主頁面（包含表單模態框）
 ├── styles.css              # 完整樣式（包含模態框樣式）
 ├── script.js               # 所有 JavaScript 功能

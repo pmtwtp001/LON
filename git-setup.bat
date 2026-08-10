@@ -31,7 +31,7 @@ echo ✓ 分支设置为 main
 
 echo.
 echo [4/5] 添加远程仓库...
-git remote add origin https://github.com/ifittw01-ai/AI-auto-sales.git 2>nul
+git remote add origin https://github.com/ifittw01-ai/LON.git 2>nul
 if errorlevel 1 (
     echo 远程仓库已存在，跳过...
 ) else (

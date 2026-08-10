@@ -2,7 +2,7 @@
 
 ## 問題：網站沒有出現表單
 
-Repository: https://github.com/ifittw01-ai/AI-auto-sales/
+Repository: https://github.com/ifittw01-ai/LON/
 
 ---
 
@@ -11,12 +11,12 @@ Repository: https://github.com/ifittw01-ai/AI-auto-sales/
 ### ✅ 步驟 1：確認 GitHub Pages 狀態
 
 1. **前往 Settings**
-   - 打開：https://github.com/ifittw01-ai/AI-auto-sales/settings/pages
+   - 打開：https://github.com/ifittw01-ai/LON/settings/pages
    - 或：Repository → Settings → Pages
 
 2. **檢查部署狀態**
    - 是否看到：「Your site is published at...」？
-   - 網址應該是：`https://ifittw01-ai.github.io/AI-auto-sales/`
+   - 網址應該是：`https://ifittw01-ai.github.io/LON/`
 
 3. **如果沒有啟用**
    - Source: 選擇「Deploy from a branch」
@@ -30,7 +30,7 @@ Repository: https://github.com/ifittw01-ai/AI-auto-sales/
 ### ✅ 步驟 2：檢查部署狀態
 
 1. **查看 Actions**
-   - 前往：https://github.com/ifittw01-ai/AI-auto-sales/actions
+   - 前往：https://github.com/ifittw01-ai/LON/actions
    - 查看最新的 workflow run
    - 應該看到綠色勾勾（✓）表示成功
 
@@ -44,17 +44,17 @@ Repository: https://github.com/ifittw01-ai/AI-auto-sales/
 
 您的 GitHub Pages 網址是：
 ```
-https://ifittw01-ai.github.io/AI-auto-sales/
+https://ifittw01-ai.github.io/LON/
 ```
 
 **注意事項：**
 - ✅ 用戶名全小寫：`ifittw01-ai`
-- ✅ Repository 名稱：`AI-auto-sales`
+- ✅ Repository 名稱：`LON`
 - ✅ 結尾有斜線：`/`
 
 **錯誤的網址（不要使用）：**
-- ❌ `https://github.com/ifittw01-ai/AI-auto-sales/` （這是 repository，不是網站）
-- ❌ `https://ifittw01-ai.github.io/ai-auto-sales/` （大小寫錯誤）
+- ❌ `https://github.com/ifittw01-ai/LON/` （這是 repository，不是網站）
+- ❌ `https://ifittw01-ai.github.io/LON/` （大小寫錯誤）
 
 ---
 
@@ -62,7 +62,7 @@ https://ifittw01-ai.github.io/AI-auto-sales/
 
 1. **開啟正確網址**
    ```
-   https://ifittw01-ai.github.io/AI-auto-sales/
+   https://ifittw01-ai.github.io/LON/
    ```
 
 2. **等待載入**
@@ -179,13 +179,13 @@ git push origin main
 
 ### 1. 確認部署
 ```
-https://github.com/ifittw01-ai/AI-auto-sales/actions
+https://github.com/ifittw01-ai/LON/actions
 ```
 → 最新的 workflow 應該是綠色 ✓
 
 ### 2. 訪問網站
 ```
-https://ifittw01-ai.github.io/AI-auto-sales/
+https://ifittw01-ai.github.io/LON/
 ```
 → 應該看到銷售頁面
 
@@ -209,7 +209,7 @@ https://ifittw01-ai.github.io/AI-auto-sales/
    - Settings → Pages 頁面的截圖
 
 2. **Actions 狀態**
-   - https://github.com/ifittw01-ai/AI-auto-sales/actions
+   - https://github.com/ifittw01-ai/LON/actions
    - 最新 workflow 的狀態
 
 3. **瀏覽器 Console**
@@ -234,7 +234,7 @@ https://ifittw01-ai.github.io/AI-auto-sales/
 → 第一次部署需要 2-5 分鐘，要有耐心
 
 ### 原因 3：網址錯誤
-→ 使用正確網址：`https://ifittw01-ai.github.io/AI-auto-sales/`
+→ 使用正確網址：`https://ifittw01-ai.github.io/LON/`
 
 ### 原因 4：瀏覽器快取
 → 按 Ctrl + F5 強制重新載入
@@ -246,7 +246,7 @@ https://ifittw01-ai.github.io/AI-auto-sales/
 1. **啟用 GitHub Pages**（如果還沒有）
 2. **等待 2 分鐘**
 3. **清除快取**（Ctrl + F5）
-4. **訪問正確網址**：`https://ifittw01-ai.github.io/AI-auto-sales/`
+4. **訪問正確網址**：`https://ifittw01-ai.github.io/LON/`
 5. **按 F12 查看 Console**
 6. **測試表單功能**
 

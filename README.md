@@ -5,7 +5,7 @@
 ## 📋 項目結構
 
 ```
-AI-auto-sales/
+LON/
 ├── index.html                # 主HTML文件（銷售頁面）
 ├── setup.html                # 系統設定頁面
 ├── records.html              # 客戶資料查看頁面

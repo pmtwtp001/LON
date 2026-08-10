@@ -1,7 +1,7 @@
 # 🚀 GitHub Pages 設定指南
 
 ## 📋 您已完成：
-- ✅ 建立了 GitHub repository: `ai-auto-sales`
+- ✅ 建立了 GitHub repository: `LON`
 - ✅ Google 表單整合已設定完成
 
 ---
@@ -21,7 +21,7 @@ git init
 
 3. **添加遠端 repository**
 ```bash
-git remote add origin https://github.com/您的用戶名/ai-auto-sales.git
+git remote add origin https://github.com/您的用戶名/LON.git
 ```
 **注意：** 將「您的用戶名」替換成您的 GitHub 用戶名
 
@@ -32,7 +32,7 @@ git add index.html records.html script.js styles.css
 
 5. **提交變更**
 ```bash
-git commit -m "Initial commit: AI auto-sales landing page with Google Forms integration"
+git commit -m "Initial commit: LON landing page with Google Forms integration"
 ```
 
 6. **推送到 GitHub**
@@ -46,7 +46,7 @@ git push -u origin main
 #### 方法 B：使用 GitHub 網頁介面（簡單）
 
 1. **前往您的 repository**
-   - 網址：`https://github.com/您的用戶名/ai-auto-sales`
+   - 網址：`https://github.com/您的用戶名/LON`
 
 2. **上傳檔案**
    - 點擊「Add file」→「Upload files」
@@ -86,12 +86,12 @@ git push -u origin main
 
 您的網站網址會是：
 ```
-https://您的用戶名.github.io/ai-auto-sales/
+https://您的用戶名.github.io/LON/
 ```
 
 例如，如果您的 GitHub 用戶名是 `john123`，網址就是：
 ```
-https://john123.github.io/ai-auto-sales/
+https://john123.github.io/LON/
 ```
 
 ---
@@ -99,7 +99,7 @@ https://john123.github.io/ai-auto-sales/
 ### 步驟 4：測試網站
 
 1. **開啟網址**
-   - 在瀏覽器開啟 `https://您的用戶名.github.io/ai-auto-sales/`
+   - 在瀏覽器開啟 `https://您的用戶名.github.io/LON/`
 
 2. **測試表單**
    - 點擊「我要優惠」
@@ -117,7 +117,7 @@ https://john123.github.io/ai-auto-sales/
 
 #### 📱 直接分享網址
 ```
-https://您的用戶名.github.io/ai-auto-sales/
+https://您的用戶名.github.io/LON/
 ```
 
 #### 🔗 縮短網址（可選）
@@ -212,7 +212,7 @@ git push
 ### Q: 網址是什麼？
 **A:** 
 ```
-https://您的GitHub用戶名.github.io/ai-auto-sales/
+https://您的GitHub用戶名.github.io/LON/
 ```
 用戶名要全小寫
 
