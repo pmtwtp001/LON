@@ -119,7 +119,7 @@ function getPromoterInfo(refCode) {
   const promoterMapping = getPromoterMapping();
   const defaultInfo = {
     email: DEFAULT_EMAIL,
-    name: '培訓法拍接班人'
+    name: 'EMBA商學院的融資課'
   };
   
   const promoterInfo = promoterMapping[refCode] || defaultInfo;
@@ -315,7 +315,7 @@ WhatsApp：${customerWhatsapp}
 祝您成交順利！🎉
 
 ---
-培訓法拍接班人
+EMBA商學院的融資課
 自動通知系統
     `.trim();
     
@@ -338,7 +338,7 @@ WhatsApp：${customerWhatsapp}
       const customerBody = `
 ${customerName}，
 
-感謝您對「培訓法拍接班人」有興趣！${regionInfo}
+感謝您對「EMBA商學院的融資課」有興趣！${regionInfo}
 
 歡迎您的到來！
 
@@ -351,7 +351,7 @@ ${customerName}，
 如有任何疑問，歡迎直接聯繫您的顧問！
 
 ---
-培訓法拍接班人 團隊
+EMBA商學院的融資課 團隊
       `.trim();
       
       try {
@@ -491,7 +491,7 @@ function testCustomerEmail() {
   const customerBody = `
 ${testCustomerName}，
 
-感謝您對「培訓法拍接班人」有興趣！${regionInfo}
+感謝您對「EMBA商學院的融資課」有興趣！${regionInfo}
 
 歡迎您的到來！
 
@@ -510,7 +510,7 @@ ${testCustomerName}，
 如有任何疑問，歡迎直接聯繫您的顧問！
 
 ---
-培訓法拍接班人 團隊
+EMBA商學院的融資課 團隊
   `.trim();
   
   Logger.log('=== 客户将收到的邮件内容 ===');
@@ -519,10 +519,10 @@ ${testCustomerName}，
   Logger.log('=== 测试完成 ===');
   
   // 检查是否使用默认值
-  if (promoterInfo.name === '培訓法拍接班人') {
+  if (promoterInfo.name === 'EMBA商學院的融資課') {
     Logger.log('');
     Logger.log('⚠️⚠️⚠️ 警告 ⚠️⚠️⚠️');
-    Logger.log('客户邮件中显示的是默认值 "培訓法拍接班人"');
+    Logger.log('客户邮件中显示的是默认值 "EMBA商學院的融資課"');
     Logger.log('原因：推广代码 "' + testRefCode + '" 在 Google Sheet 中找不到匹配项');
     Logger.log('');
     Logger.log('请检查：');

@@ -166,7 +166,7 @@ WhatsApp：${customerWhatsapp}
 祝您成交順利！🎉
 
 ---
-AI+自媒體創業系統
+EMBA商學院的融資課
 自動通知系統
     `.trim();
     
@@ -185,7 +185,7 @@ AI+自媒體創業系統
     // 2. 發送確認郵件給報名客戶
     // ========================================
     if (customerEmail) {
-      const customerSubject = `感謝您報名「AI+自媒體創業系統」`;
+      const customerSubject = `感謝您報名「EMBA商學院的融資課」`;
       
       // 準備地區信息顯示
       const regionInfo = customerRegion ? `\n\n記得您的時間與地址：${customerRegion}` : '';
@@ -193,13 +193,13 @@ AI+自媒體創業系統
       const customerBody = `
 ${customerName}，
 
-感謝您對「AI+自媒體創業系統」有興趣！${regionInfo}
+感謝您對「EMBA商學院的融資課」有興趣！${regionInfo}
 
 歡迎您的到來！
 
 我們期待與您見面！🚀
 ---
-培訓法拍接班人 團隊
+EMBA商學院的融資課 團隊
       `.trim();
       
       try {
