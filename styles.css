@@ -1261,6 +1261,18 @@ body {
     padding: 12px 0;
 }
 
+.picker-retry-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 8px;
+    background: #6c5ce7;
+    color: #fff;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
 .picker-option,
 .region-option {
     display: block;

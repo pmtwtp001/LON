@@ -783,10 +783,36 @@ document.addEventListener('visibilitychange', () => {
 // 動態加載評估地點（從 Google Apps Script 獲取）
 // ========================================
 
-const DEFAULT_REGION_OPTIONS = [
-    { id: '2', text: '11/3 星期一 晚上 7:00~9:00 捷運新店區公所站一號出口1分鐘到 北新路一段159號2樓' },
-    { id: '3', text: '11/5 星期三 下午 2:00~4:00 捷運新店區公所站一號出口1分鐘到 北新路一段159號2樓' }
-];
+const REGION_CACHE_KEY = 'lon_region_options_cache';
+const REGION_CACHE_TTL = 30 * 60 * 1000;
+
+function saveRegionCache(regions) {
+    try {
+        localStorage.setItem(REGION_CACHE_KEY, JSON.stringify({
+            ts: Date.now(),
+            regions: regions
+        }));
+    } catch (error) {
+        console.warn('無法暫存評估地點:', error);
+    }
+}
+
+function readRegionCache() {
+    try {
+        const raw = localStorage.getItem(REGION_CACHE_KEY);
+        if (!raw) return null;
+        const data = JSON.parse(raw);
+        if (!data.regions || data.regions.length === 0) return null;
+        if (Date.now() - data.ts > REGION_CACHE_TTL) return null;
+        return data.regions;
+    } catch (error) {
+        return null;
+    }
+}
+
+function isValidRegionResult(result) {
+    return !!(result && result.success && Array.isArray(result.regions) && result.regions.length > 0);
+}
 
 function populatePickerOptions(containerId, fieldName, items, options = {}) {
     const container = document.getElementById(containerId);
@@ -854,13 +880,13 @@ function populateRegionOptions(regions) {
     });
 }
 
-function fetchRegionsJsonp() {
+function fetchRegionsJsonp(timeoutMs = 12000) {
     return new Promise((resolve, reject) => {
         const callbackName = 'jsonpRegions_' + Date.now();
         const timeout = setTimeout(() => {
             cleanup();
             reject(new Error('JSONP timeout'));
-        }, 8000);
+        }, timeoutMs);
 
         function cleanup() {
             clearTimeout(timeout);
@@ -885,7 +911,7 @@ function fetchRegionsJsonp() {
     });
 }
 
-async function fetchRegionsWithTimeout(timeoutMs = 8000) {
+async function fetchRegionsWithTimeout(timeoutMs = 12000) {
     const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
     const timer = controller ? setTimeout(() => controller.abort(), timeoutMs) : null;
 
@@ -903,6 +929,44 @@ async function fetchRegionsWithTimeout(timeoutMs = 8000) {
     }
 }
 
+async function requestRegionsOnce() {
+    try {
+        const jsonpResult = await fetchRegionsJsonp();
+        if (isValidRegionResult(jsonpResult)) return jsonpResult;
+    } catch (jsonpError) {
+        console.warn('⚠️ JSONP 載入失敗，改用 fetch:', jsonpError);
+    }
+
+    const fetchResult = await fetchRegionsWithTimeout();
+    if (!isValidRegionResult(fetchResult)) {
+        throw new Error('評估地點資料為空');
+    }
+    return fetchResult;
+}
+
+function showRegionLoadError() {
+    const container = document.getElementById('regionOptions');
+    if (!container) return;
+
+    container.innerHTML = '';
+    container.removeAttribute('aria-busy');
+
+    const message = document.createElement('p');
+    message.className = 'picker-options-empty';
+    message.textContent = '時段載入失敗，請重新載入，不要使用過期日期';
+
+    const retryBtn = document.createElement('button');
+    retryBtn.type = 'button';
+    retryBtn.className = 'picker-retry-btn';
+    retryBtn.textContent = '重新載入時段';
+    retryBtn.addEventListener('click', () => {
+        loadRegionOptions();
+    });
+
+    container.appendChild(message);
+    container.appendChild(retryBtn);
+}
+
 async function loadRegionOptions() {
     const container = document.getElementById('regionOptions');
 
@@ -918,29 +982,37 @@ async function loadRegionOptions() {
     container.innerHTML = '<p class="picker-options-loading">載入中，請稍候…</p>';
     container.setAttribute('aria-busy', 'true');
 
-    let regionsToShow = DEFAULT_REGION_OPTIONS;
     let result = null;
-
-    try {
-        result = await fetchRegionsWithTimeout(8000);
-    } catch (fetchError) {
-        console.warn('⚠️ fetch 載入失敗，嘗試 JSONP:', fetchError);
+    for (let attempt = 1; attempt <= 2; attempt++) {
         try {
-            result = await fetchRegionsJsonp();
-        } catch (jsonpError) {
-            console.warn('⚠️ JSONP 也失敗，使用預設選項:', jsonpError);
+            result = await requestRegionsOnce();
+            if (isValidRegionResult(result)) break;
+        } catch (error) {
+            console.warn('⚠️ 第 ' + attempt + ' 次載入評估地點失敗:', error);
+            result = null;
         }
     }
 
-    if (result && result.success && result.regions && result.regions.length > 0) {
-        regionsToShow = result.regions;
+    if (isValidRegionResult(result)) {
+        saveRegionCache(result.regions);
+        populateRegionOptions(result.regions);
+        regionsLoadState = 'ready';
         console.log('✅ 成功載入 ' + result.regions.length + ' 個評估地點');
-    } else {
-        console.log('ℹ️ 使用預設評估地點選項');
+        updateSubmitButtonState();
+        return;
     }
 
-    populateRegionOptions(regionsToShow);
-    regionsLoadState = 'ready';
+    const cached = readRegionCache();
+    if (cached) {
+        populateRegionOptions(cached);
+        regionsLoadState = 'ready';
+        console.warn('⚠️ 改用最近一次成功載入的時段');
+        updateSubmitButtonState();
+        return;
+    }
+
+    showRegionLoadError();
+    regionsLoadState = 'error';
     updateSubmitButtonState();
 }
 
